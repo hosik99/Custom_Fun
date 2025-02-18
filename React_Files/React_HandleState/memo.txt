@@ -1,0 +1,15 @@
+
+목적 : handleState를 이용하여 서버의 응답의 내부 구성을 통일화
+
+각 클래스의 목적 :
+    controller.jsx -> 서버와 통신
+    handleState.jsx -> 서버의 Response를 
+
+    	const result = {
+            status,
+            success: true,
+            message,
+            data : data
+        };
+
+    result 형태로 치환

@@ -1,0 +1,10 @@
+
+React_PopupBox/
+    ├── component/ MsgPopup.tsx       # Popup메세지를 띄우는 컴포넌트
+    └── page/ PostLogPage.tsx     # 사용 예시
+
+
+사용법 예시
+<MsgPopup msg={msg} time=3000 id={msgId}/>
+
+msg,msgId를 다른게 바꾸어 Component를 실행할때마다 PopupBox가 화면에 띄어짐

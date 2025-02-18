@@ -1,0 +1,8 @@
+
+목적 : App.js <Routes> 설정 가독성 높임
+
+클래스 : 
+    App.js -> <BrowserRouter>, <Routes> 태그 사용하여 경로 설정
+
+    PrivateRoute.js -> 사용자가 인증된 사용자인지 확인, 미인증 사용자는 로그인 페이지로 이동
+    useAuth.js ->  인증 토큰 관리

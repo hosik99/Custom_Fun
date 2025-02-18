@@ -1,0 +1,25 @@
+
+/*
+    목적 : 검색 기능에서 자주 사용되는 필터링을 라이브러리화하여 반복되는 코드를 줄임
+    후기 : DB에 따라 매소드를 구현해야하는 것이 귀찮지만, 프론트에서 사용하는 구조가 획일화되어 코드가 깔끔해짐
+*/
+
+React/
+    ├── component/filterBox/ filterBox.jsx       # HTML에서의 사용 예시
+    ├── hooks_api_controller/ postLogHandler.ts   # 서버와 소통하는 스크립트, pageable형태의 객체를 전송
+    │
+    └── page/ PostLogPage.tsx       
+        # (PostLogPageableDTO) 공통사용되는 pageable
+        형태의 객체
+        # filterBox.jsx를 사용해서 값을 설정
+    
+Spring_WebFlux/
+    ├── config/ PostsLogCongfig.java      # React와 소통하는 URL설정 (Controller.java)
+
+    ├── handler/ PostsLogHandler.java       # React에서 받은 pageableDTO를 확인해서 필터링해야하는 요소 파악, 알맞은 메소드 실행 (Service.java)
+    ├── manager/ PostLogManager.java        # PageableManager 인터페이스 구현, 필요한 메소드 추가하는 User Custom Class, 필수 메소드 <convertFilterValue> 구현
+    ├── mongoDB_reactive/pageable/ 
+            ├── CustomPageableDTO.java      #(중요) React와 Spring에서 사용되는 공통된 DTO 
+            ├── PageableCustomRepository.interface      # 사용자가 필수 구현해야하는 메소드 정의, 사용 DB의 Repository에서 구현
+            └── PageableManager.interface    # manager.class를 만들어서 구현, React의 Request로 부터 값 추출, manager.convertFilterValue() 메소드에 설정해둔 클래스로 캐스팅
+    └── repository/ PostLogCustomRepository.java    # PageableCustomRepository.interface 구현, 필수 메소드에 맞추어 SQL문 작성

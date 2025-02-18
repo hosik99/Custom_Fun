@@ -1,0 +1,16 @@
+
+/*
+    기능 : 에러 발생 시 ErrorQueue에 추가, 일정 시간 or 일정 수량 초과 시 DB에 저장
+
+    목적 : 에러 발생 시 그때마다 DB에 저장하는 것은 DB의 피로감을 높이는 것이라는 생각을 가지게 됨
+    Buffer를 모방하여, 에러 정보를 Queue에 보관하다가 한번에 DB에 저장하는 방법을 구현
+*/
+
+
+├── excepotion/
+    ├── ErrorQueue.java       # 에러 정보를 담은 Queue 관리 및 DB에 저장
+    │
+    ├── ErrorQueueScheduler.java    # @Schedule를 사용하여 일정 시간마다 DB에 Queue Flush 
+    ├── ExceptionManager.java    # Error객체 관리 메소드 정의
+    └── GlobalExceptionHandler.java    # 서버에서 발생하는 Exception Catch
+└── SchedulerConfig.java    # Schedule 사용 설정

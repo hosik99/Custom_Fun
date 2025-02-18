@@ -1,0 +1,43 @@
+[ Configure Folders]
+
+    src/
+    ├── assets/               # 정적 파일(이미지, 폰트 등)
+    │   ├── images/
+    │   ├── fonts/
+    │   └── icons/
+    │
+    ├── components/           # 재사용 가능한 컴포넌트
+    │   ├── Footer/
+    │   ├── Header/
+    │   └── Sidebar/
+    │
+    ├── pages/                # 페이지 컴포넌트
+    │   ├── Home/
+    │   ├── About/
+    │   └── Error/
+    │
+    ├── hooks/                # 커스텀 훅
+    │   └── api/
+    │       ├── preAxios
+    │       └── controller/
+    │
+    │
+    ├── context/              # React Context
+    │   └── AuthContext/
+    │
+    ├── services/             # API 호출 및 비즈니스 로직
+    │   ├── apiService.js
+    │   └── authService.js
+    │
+    ├── utils/                # 유틸리티 함수 및 도구
+    │   ├── formatDate.js
+    │   └── validation.js
+    │
+    ├── styles/               # 전역 스타일 및 테마
+    │   ├── global.css
+    │   └── theme.js
+    │
+    ├── App.js                # 애플리케이션의 진입점
+    ├── index.js              # 애플리케이션 렌더링
+    └── serviceWorker.js      # 서비스 워커(옵션)
+    
